@@ -1,0 +1,67 @@
+<main class="container">    
+    <button routerLink="/products" class="btn btn-primary btn-sm mt-4">Regresar</button> 
+                                    <div class="row">
+                                      <div class="col-md-4 mt-4">
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="card-title">Registrar nuevo producto</div>
+                                            <!--codigo-->
+                                            <div class="form-group">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Codigo:</label>
+                                                    <input type="text" name="codigo" placeholder="Codigo:" class="form-control" [(ngModel)]="producto.codigo">
+                                                </div>
+                                            </div>
+                                            <!--codigo-->
+                                            <!--Nombre-->
+                                            <div class="form-group">
+                                              <div class="mb-3">
+                                                <label class="form-label">Nombre:</label>
+                                                <input type="text" name="nombre" placeholder="Nombre:" class="form-control " [(ngModel)]="producto.nombre">
+                                              </div>
+                                            </div>
+                                            <!--Nombre-->                                           
+                                            <!--iva-->
+                                            <div class="form-group">
+                                              <label class="form-label">Iva:</label>
+                                              <input type="text" name="iva" placeholder="Iva:" class="form-control" [(ngModel)]="producto.iva">                                            
+                                            </div>
+                                            <!--iva-->                                            
+                                            <!--precio-->
+                                            <div class="form-group">
+                                                <label class="form-label">Precio:</label>
+                                                <input type="text" name="precio" placeholder="Precio:" class="form-control" [(ngModel)]="producto.precio">
+                                            </div>
+                                            <!--precio-->
+                                            <!--descripcion-->
+                                            <div class="form-group">
+                                                <label class="form-label">Descripcion:</label>
+                                                <input type="text" name="descripcion" placeholder="Descripcion:" class="form-control" [(ngModel)]="producto.descripcion">
+                                            </div>
+                                            <!--descripcion-->
+                                            <!--Imagen-->                                                                                     
+                                            <div class="form-group">
+                                              <label class="form-label">Imagen:</label>
+                                              <input type="url" name="image" placeholder="Image" class="form-control" [(ngModel)]=producto.imagen>
+                                            </div>
+                                            <!--Imagen-->
+                                            <div class="d-grid gap-2 col-6 mx-auto">
+                                              <button (click)="edit ? updateProducto() : saveNewProducto()" class="btn btn-success">Enviar</button>
+                                              <!--<button (click)="addOrEdit()" class="btn btn-success">Enviar</button>-->
+                                              <!--<button *ngIf="selectedCliente.id !== 0" (click)="Eliminar()" class="btn btn-danger">Eliminar</button>-->
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div> 
+                                     <div class="col md-4 mt-4">
+                                        <div class="card card-body text-center">
+                                          <img [src]="producto.imagen">
+                                          <strong><h5>Codigo:</h5></strong><p>{{producto.codigo == 0 ? '----' : producto.codigo}}</p>
+                                          <strong><h5>Nombre:</h5></strong><p>{{producto.nombre == '' ? '----' : producto.nombre}}</p>
+                                          <strong><h5>Iva:</h5></strong><p>{{producto.iva == 0 ? '----' : producto.iva}}</p>
+                                          <strong><h5>Precio:</h5></strong><p>{{producto.precio == 0 ? '----' : producto.precio}}</p>
+                                          <strong><h5>Descripción:</h5></strong><p>{{producto.descripcion == '' ? '----' : producto.descripcion}}</p>
+                                        </div>
+                                      </div>
+      </div>
+    </main>
