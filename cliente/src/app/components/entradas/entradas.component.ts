@@ -17,17 +17,18 @@ export class EntradasComponent implements OnInit {
     this.getEntradas();
   }
 
-   //Obtener clientes
+   //Obtener entradas
    getEntradas(){
     this.entradasService.getEntradas().subscribe(
       res => {
         this.entradas= res;
+        console.log(res);
       },
       err => console.error(err)
     );
   }
 
-  //Eliminar cliente
+  //Eliminar entrada
   deleteEntrada(id: string){
     //Crear mensaje de eliminar
     alert('Seguro desea eliminar');
@@ -41,6 +42,6 @@ export class EntradasComponent implements OnInit {
     console.log(id);
   }
 
-  //Actualizar cliente
+  //Actualizar entrada
 
 }

@@ -8,12 +8,17 @@
                                             <!--Producto-->
                                             <div class="form-group">
                                               <div class="mb-3">
-                                                <label class="form-label">Producto:</label>
-                                                <input type="text" name="producto" placeholder="Producto:" class="form-control " [(ngModel)]="entrada.producto">
-
-                                               <!--<select ng-options="entrada.producto for producto in entrada" ng-model="entrada"></select>-->
+                                                <label for="exampleDataList" class="form-label">Producto:</label>
+                                                 <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Buscar..." [(ngModel)]="entrada.producto">
+                                                  <datalist id="datalistOptions" >
+                                                   <option *ngFor="let dp of productos" [value]="dp.id"> {{dp.nombre}}</option>                                                                                           
+                                                 </datalist>                                        
                                               </div>
-                                            </div>
+                                            </div> 
+                                            <!--<label class="form-label">Producto:</label>                                                                        
+                                                <select [(ngModel)]="entrada.producto"  class="form-select" placeholder="Producto:">
+                                                  <option *ngFor="let dp of productos" [value]="dp.id">{{dp.nombre}}</option>
+                                                </select>-->                                                                                    
                                             <!--Producto-->
                                             <!--Stock-->
                                             <div class="form-group">

@@ -18,7 +18,7 @@ class EntradasController {
     //Listar
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const entradas = yield database_1.default.query('SELECT * FROM entradas');
+            const entradas = yield database_1.default.query('SELECT * FROM entradas INNER JOIN productos ON entradas.id= productos.id');
             res.json(entradas);
         });
     }

@@ -26,8 +26,12 @@ CREATE TABLE productos(
  CREATE TABLE entradas(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     producto INT NOT NULL,
-    FOREIGN KEY (producto) REFERENCES productos(id),
+    FOREIGN KEY fk_producto(producto) REFERENCES productos(id),
     stock INT NOT NULL,    
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     
 );
+
+
+/*Consulta para traer datos por foreign key*/
+/*SELECT * FROM ´productos´.´nombre´ WHERE ´id´=3*/

@@ -4,8 +4,8 @@ import { Entrada } from 'src/app/models/entradas';
 import{ ActivatedRoute, Router} from '@angular/router';
 
 import { EntradasService } from '../../services/entradas.service';
-
-
+import{ Producto } from '../../models/product'
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-entradas-form',
@@ -23,13 +23,20 @@ export class EntradasFormComponent implements OnInit {
       created_at: new Date()
     };
 
+    /*productos: Producto[]=[
+     { id: 6,  imagen:'',codigo:234,nombre:'hola mundo', iva: 0, estado: true, precio: 0, descripcion: '', created_at: new Date()  }
+     
+    ];*/
+  productos: any=[];
+
     
   //Si esta en falso significa que quiere guardar una nueva entrada y si esta en verdadero significa que quiere actualizar una entrada
   edit: boolean = false;
   
 
-  constructor(private entradasService: EntradasService, private router: Router, private activatedRoute: ActivatedRoute) { }
-
+  constructor(private entradasService: EntradasService, private router: Router, private activatedRoute: ActivatedRoute ,private productsService: ProductosService) { }
+ 
+ 
   ngOnInit(): void {
     const params=this.activatedRoute.snapshot.params;
     if (params.id){
@@ -44,7 +51,21 @@ export class EntradasFormComponent implements OnInit {
       )
     }
     console.log(params);
+
+    this.getproducts();
+
   }
+
+  getproducts(){
+    this.productsService.getProductos().subscribe(
+      res=> {
+        this.productos= res;
+        console.log(res);
+      },
+      err=> console.error(err)
+    );
+  }
+
     //Guardar
     saveNewEntrada(){
       delete this.entrada.created_at;

@@ -5,9 +5,10 @@ import pool from'../database';
 class EntradasController{
         //Listar
         public async list (req: Request, res: Response){    
-            const entradas = await pool.query('SELECT * FROM entradas');
+            const entradas = await pool.query('SELECT * FROM entradas INNER JOIN productos ON entradas.id= productos.id');
             res.json(entradas);
         }
+     
         //Obtener 
         public async getOne (req: Request, res: Response): Promise<any>{        
             const { id }= req.params;
