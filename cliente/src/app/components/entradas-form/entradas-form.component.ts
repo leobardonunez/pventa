@@ -23,10 +23,7 @@ export class EntradasFormComponent implements OnInit {
       created_at: new Date()
     };
 
-    /*productos: Producto[]=[
-     { id: 6,  imagen:'',codigo:234,nombre:'hola mundo', iva: 0, estado: true, precio: 0, descripcion: '', created_at: new Date()  }
-     
-    ];*/
+  //Guarda productos
   productos: any=[];
 
     
@@ -55,7 +52,7 @@ export class EntradasFormComponent implements OnInit {
     this.getproducts();
 
   }
-
+//Obtiene Productos
   getproducts(){
     this.productsService.getProductos().subscribe(
       res=> {

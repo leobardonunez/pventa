@@ -23,6 +23,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { EntradasComponent } from './components/entradas/entradas.component';
 import { EntradasFormComponent } from './components/entradas-form/entradas-form.component';
+import { SucursalesComponent } from './components/sucursales/sucursales.component';
+import { SucursalesFormComponent } from './components/sucursales-form/sucursales-form.component';
 
 const rutas: Routes=[
     //Esta es la ruta principal
@@ -84,6 +86,21 @@ const rutas: Routes=[
     {
       path: 'entradas/edit/:id',
       component: EntradasFormComponent
+    },
+    //Sucursales
+    {
+      path: 'sucursales',
+      component: SucursalesComponent
+    },
+    //Sucursales/add
+    {
+      path: 'sucursales/add',
+      component: SucursalesFormComponent
+    },
+    //Sucursales/edit/:id
+    {
+      path: 'sucursales/edit/:id',
+      component: SucursalesFormComponent
     }
 
 ]
@@ -99,7 +116,9 @@ const rutas: Routes=[
     ProductsComponent,
     ProductFormComponent,
     EntradasComponent,
-    EntradasFormComponent
+    EntradasFormComponent,
+    SucursalesComponent,
+    SucursalesFormComponent
   ],
   imports: [
     BrowserModule,

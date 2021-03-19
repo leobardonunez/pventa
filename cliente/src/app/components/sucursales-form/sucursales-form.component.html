@@ -1,0 +1,50 @@
+<main class="container">    
+    <button routerLink="/sucursales" class="btn btn-primary btn-sm mt-4">Regresar</button> 
+                                    <div class="row">
+                                      <div class="col-md-4 mt-4">
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="card-title">Registrar nueva sucursal</div>
+                                            <!--Nombre-->
+                                            <div class="form-group">
+                                              <div class="mb-3">
+                                                <label class="form-label">Sucursal:</label>
+                                                <input type="text" name="nombre" placeholder="Nombre:" class="form-control " [(ngModel)]="sucursal.sucursal">
+                                              </div>
+                                            </div>
+                                            <!--Nombre-->                                            
+                                            <div class="d-grid gap-2 col-6 mx-auto">
+                                              <button (click)="edit ? updateSucursal() : saveNewSucursal()" class="btn btn-success">Enviar</button>
+                                              <!--<button (click)="addOrEdit()" class="btn btn-success">Enviar</button>-->
+                                              <!--<button *ngIf="selectedCliente.id !== 0" (click)="Eliminar()" class="btn btn-danger">Eliminar</button>-->
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div> 
+                                      
+                                      <!--<div class="col md-4 mt-4">
+                                        <div class="card text-center">
+                                          <div class="card-header">
+                                            <strong><h5>Sucursal:</h5></strong> <p>{{sucursal.sucursal == '' ? '----' : sucursal.sucursal}}</p> 
+                                          </div>
+                                          <div class="card-body">
+                                            <table class="table table-striped table-bordered row-border hover">
+                                              <thead>
+                                                <tr>
+                                                  <th>Telefono</th>                                                  
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr>
+                                                  <td>{{sucursal.telefono == '' ? '----' : sucursal.telefono}}</td>                                                                                                                                  
+                                                </tr>
+                                              </tbody>
+                                            </table>                                          
+                                          </div>
+                                          <div class="card-footer text-muted">
+                                            <p>{{sucursal.created_at | date: 'yyyy-MM-dd'}}</p>
+                                          </div>
+                                        </div>
+                                      </div>-->
+      </div>
+    </main>

@@ -8,7 +8,7 @@ class ProductosController{
     public async list(req: Request, res: Response){
         const productos= await pool.query('SELECT * FROM productos');
         res.json(productos);
-    }
+    }   
     //Obtener
     public async getOne(req: Request, res: Response): Promise<any>{
         const {id}= req.params;

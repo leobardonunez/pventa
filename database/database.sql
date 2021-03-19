@@ -32,6 +32,13 @@ CREATE TABLE productos(
     
 );
 
+CREATE TABLE sucursales(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    sucursal VARCHAR(200),
+    estado boolean,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 
 /*Consulta para traer datos por foreign key*/
 /*SELECT * FROM ´productos´.´nombre´ WHERE ´id´=3*/

@@ -10,12 +10,13 @@ import{ EntradasService } from '../../services/entradas.service';
 export class EntradasComponent implements OnInit {
 
   entradas: any=[];
-
   constructor( private entradasService: EntradasService) { }
 
   ngOnInit(){
     this.getEntradas();
   }
+
+
 
    //Obtener entradas
    getEntradas(){

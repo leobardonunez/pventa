@@ -12,51 +12,50 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.entradasController = void 0;
+exports.sucursalesController = void 0;
 const database_1 = __importDefault(require("../database"));
-class EntradasController {
+class SucursalesController {
     //Listar
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const entradas = yield database_1.default.query('SELECT * FROM entradas');
-            res.json(entradas);
+            const sucursales = yield database_1.default.query('SELECT * FROM sucursales');
+            res.json(sucursales);
         });
     }
-    //SELECT DISTINCT productos.codigo , productos.nombre from productos INNER JOIN entradas
-    //Obtener 
+    //Obtener
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const entradas = yield database_1.default.query('SELECT * FROM entradas WHERE id = ?', [id]);
-            if (entradas.length > 0) {
-                return res.json(entradas[0]);
+            const sucursales = yield database_1.default.query('SELECT * FROM sucursales WHERE id=?', [id]);
+            if (sucursales.length > 0) {
+                return res.json(sucursales[0]);
             }
-            res.status(404).json({ text: 'La entrada no existe' });
+            res.status(404).json({ text: 'La sucursal no existe' });
         });
     }
     //Crear
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO entradas set ? ', [req.body]);
+            yield database_1.default.query('INSERT INTO sucursales set ? ', [req.body]);
             console.log(req.body);
-            res.json({ text: 'creating Entrada' });
+            res.json({ text: 'Creating Sucursal' });
         });
     }
     //Eliminar
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('DELETE FROM entradas WHERE id = ? ', [id]);
-            res.json({ text: 'delete a Entrada' });
+            yield database_1.default.query('DELETE FROM sucursales WHERE id = ?', [id]);
+            res.json({ text: 'Delete a Sucursal' });
         });
     }
     //Actualizar
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('UPDATE entradas set ? WHERE id= ?', [req.body, id]);
-            res.json({ text: 'Entrada actualizado ' + req.params.id });
+            yield database_1.default.query('UPDATE sucursales set ? WHERE id=?', [req.body, id]);
+            res.json({ text: 'Update sucursal with id= ' + req.params.id });
         });
     }
 }
-exports.entradasController = new EntradasController();
+exports.sucursalesController = new SucursalesController();
