@@ -8,7 +8,10 @@ import clientesRoutes from './routes/clientesRoutes';
 import productosRoutes from './routes/productosRoutes';
 import entradasRoutes from './routes/entradasRoutes';
 import sucursalesRoutes from './routes/sucursalesRoutes';
-import dashboardRoutes from './routes/dashboardRoutes'
+import dashboardRoutes from './routes/dashboardRoutes';
+import ventasRoutes from './routes/ventasRoutes';
+import usuariosRoutes from './routes/usuariosRoutes';
+import rolesRoutes from './routes/rolesRoutes';
 //Inicia el servidor
 class Server{
 
@@ -40,6 +43,9 @@ class Server{
         this.app.use('/entradas', entradasRoutes);
         this.app.use('/sucursales', sucursalesRoutes);
         this.app.use('/dashboard', dashboardRoutes);
+        this.app.use('/ventas', ventasRoutes);
+        this.app.use('/usuarios', usuariosRoutes);
+        this.app.use('/roles', rolesRoutes);
     }
 
     //Inicializar el servidor para escuchar

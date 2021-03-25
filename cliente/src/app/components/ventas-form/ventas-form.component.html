@@ -1,0 +1,64 @@
+<main class="container">    
+    <button routerLink="/ventas" class="btn btn-primary btn-sm mt-4">Regresar</button> 
+                                    <div class="row">
+                                      <div class="col-md-5 mt-4">
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="card-title">Registrar nueva venta</div>
+                                            <!--Producto-->
+                                            <div class="form-group">
+                                              <div class="mb-3">
+                                                <label class="form-label">Producto:</label>                                                                        
+                                                <select [(ngModel)]="ventas.producto_venta"  class="form-select" placeholder="Producto:">
+                                                  <option *ngFor="let dp of productos" [value]="dp.id">{{dp.nombre}}</option>
+                                                </select>                                 
+                                              </div>
+                                            </div>                                                                                  
+                                            <!--Producto-->
+                                            <!--cantidad-->
+                                            <div class="form-group">
+                                              <label for="exampleDataList" class="form-label">Cantidad:</label>
+                                             <input type="text" name="cantidad" placeholder="cantidad:" class="form-control " [(ngModel)]="ventas.cantidad">                                            
+                                            </div>
+                                            <!--cantidad-->
+                                            <!--Cliente-->
+                                            <div class="form-group">
+                                              <label class="form-label">Cliente:</label>
+                                              <input type="text" name="cliente" placeholder="Cliente" class="form-control" [(ngModel)]="ventas.cliente">
+                                            </div>                                            
+                                            <!--Cliente-->
+                                            <!--Subtotal-->
+                                            <div class="form-group">
+                                              <label class="form-label">Subtotal:</label>
+                                              <input type="text" class="form-control" name="subtotal" placeholder="subtotal" [(ngModel)]="ventas.subtotal">
+                                            </div>
+                                            <!--Subtotal-->
+                                            <!--Iva-->
+                                            <div class="form-gorup">
+                                              <label class="form-label">Iva:</label>
+                                              <input type="text" class="form-control" name="iva" placeholder="iva" [(ngModel)]="ventas.iva">
+                                            </div>
+                                            <!--Iva-->
+                                            <!--Descuento-->
+                                            <div class="form-group">
+                                              <label class="form-label">Descuento:</label>
+                                              <input type="text" class="form-control" name="descuento" placeholder="descuento" [(ngModel)]="ventas.descuento">
+                                            </div>
+                                            <!--Descuento-->
+                                            <!--Total-->
+                                            <div class="form-group">
+                                              <label class="form-label">Total:</label>
+                                              <input type="text" class="form-control" name="total" placeholder="total" [(ngModel)]="ventas.total">
+                                            </div>
+                                            <!--Total-->
+                                           <div class="d-grid gap-2 col-6 mx-auto">
+                                              <button (click)="edit ? updateVenta() : saveNewVenta()" class="btn btn-success">Enviar</button>
+                                              <!--<button (click)="addOrEdit()" class="btn btn-success">Enviar</button>-->
+                                              <!--<button *ngIf="selectedCliente.id !== 0" (click)="Eliminar()" class="btn btn-danger">Eliminar</button>-->
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div> 
+
+      </div>
+    </main>

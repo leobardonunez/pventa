@@ -9,7 +9,7 @@ import { DashboardService } from '../../services/dashboard.service';
 })
 export class DashboardComponent implements OnInit {
 
-  productos=56;
+  productos: any=[];
     constructor(private dashboardService: DashboardService) { }
 
   ngOnInit(): void {

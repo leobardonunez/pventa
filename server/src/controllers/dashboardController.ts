@@ -7,7 +7,7 @@ class DashboardController{
     
     //GetCountProducts
     public async count(req: Request, res: Response){
-        const countproducts= await pool.query('SELECT * FROM productos');
+        const countproducts= await pool.query('SELECT COUNT(*) FROM productos');
         res.json(countproducts);
         //SELECT COUNT(*) FROM productos
     }

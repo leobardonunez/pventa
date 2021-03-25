@@ -12,16 +12,26 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.dashboardController = void 0;
+exports.rolesController = void 0;
 const database_1 = __importDefault(require("../database"));
-class DashboardController {
-    //GetCountProducts
-    count(req, res) {
+class RolesController {
+    //Listar
+    list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const countproducts = yield database_1.default.query('SELECT COUNT(*) FROM productos');
-            res.json(countproducts);
-            //SELECT COUNT(*) FROM productos
+            const roles = yield database_1.default.query('SELECT * FROM rol_user');
+            res.json(roles);
+        });
+    }
+    //Obtener
+    getOne(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            const roles = yield database_1.default.query('SELECT * FROM rol_user WHERE id=?', [id]);
+            if (roles.length > 0) {
+                return res.json(roles[0]);
+            }
+            res.status(404).json({ text: 'No existe ningun registro con ese id' });
         });
     }
 }
-exports.dashboardController = new DashboardController();
+exports.rolesController = new RolesController();

@@ -25,6 +25,12 @@ import { EntradasComponent } from './components/entradas/entradas.component';
 import { EntradasFormComponent } from './components/entradas-form/entradas-form.component';
 import { SucursalesComponent } from './components/sucursales/sucursales.component';
 import { SucursalesFormComponent } from './components/sucursales-form/sucursales-form.component';
+import { VentasComponent } from './components/ventas/ventas.component';
+import { VentasFormComponent } from './components/ventas-form/ventas-form.component';
+import { FacturacionComponent } from './components/facturacion/facturacion.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { UsuariosFormComponent } from './components/usuarios-form/usuarios-form.component';
+import { TrabajadoresComponent } from './components/trabajadores/trabajadores.component';
 
 const rutas: Routes=[
     //Esta es la ruta principal
@@ -101,6 +107,46 @@ const rutas: Routes=[
     {
       path: 'sucursales/edit/:id',
       component: SucursalesFormComponent
+    },
+    //Ventas
+    {
+      path: 'ventas',
+      component: VentasComponent
+    },
+    //Ventas/add
+    {
+      path: 'ventas/add',
+      component: VentasFormComponent
+    },
+    //Ventas/edit/:id
+    {
+      path: 'ventas/edit/:id',
+      component: VentasFormComponent
+    },
+    //Facturacion
+    {
+      path: 'facturacion',
+      component: FacturacionComponent
+    },
+    //Usuarios
+    {
+      path: 'usuarios',
+      component: UsuariosComponent
+    },
+    //Usuarios/add
+    {
+      path: 'usuarios/add',
+      component: UsuariosFormComponent
+    },
+    //Usuarios/edit/:id
+    {
+      path: 'usuarios/edit/:id',
+      component: UsuariosFormComponent
+    },
+    //Trabajadores
+    {
+      path: 'trabajadores',
+      component: TrabajadoresComponent
     }
 
 ]
@@ -118,7 +164,13 @@ const rutas: Routes=[
     EntradasComponent,
     EntradasFormComponent,
     SucursalesComponent,
-    SucursalesFormComponent
+    SucursalesFormComponent,
+    VentasComponent,
+    VentasFormComponent,
+    FacturacionComponent,
+    UsuariosComponent,
+    UsuariosFormComponent,
+    TrabajadoresComponent
   ],
   imports: [
     BrowserModule,
