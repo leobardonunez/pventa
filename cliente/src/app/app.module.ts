@@ -31,6 +31,9 @@ import { FacturacionComponent } from './components/facturacion/facturacion.compo
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { UsuariosFormComponent } from './components/usuarios-form/usuarios-form.component';
 import { TrabajadoresComponent } from './components/trabajadores/trabajadores.component';
+import { TrabajadoresShowComponent } from './components/trabajadores-show/trabajadores-show.component';
+import { FacturasComponent } from './components/facturas/facturas.component';
+import { FacturasFormComponent } from './components/facturas-form/facturas-form.component';
 
 const rutas: Routes=[
     //Esta es la ruta principal
@@ -123,11 +126,7 @@ const rutas: Routes=[
       path: 'ventas/edit/:id',
       component: VentasFormComponent
     },
-    //Facturacion
-    {
-      path: 'facturacion',
-      component: FacturacionComponent
-    },
+  
     //Usuarios
     {
       path: 'usuarios',
@@ -147,6 +146,26 @@ const rutas: Routes=[
     {
       path: 'trabajadores',
       component: TrabajadoresComponent
+    },
+    //Trabajadores/show
+    {
+      path: 'trabajadores/edit/:id',
+      component: TrabajadoresShowComponent
+    },
+    //Facturas
+    {
+      path: 'facturas',
+      component: FacturasComponent
+    },
+    //facturas/add
+    {
+      path: 'facturas/add',
+      component: FacturasFormComponent
+    },
+    //facturas/edit/:id
+    {
+      path: 'facturas/edit/:id',
+      component: FacturasFormComponent
     }
 
 ]
@@ -170,7 +189,10 @@ const rutas: Routes=[
     FacturacionComponent,
     UsuariosComponent,
     UsuariosFormComponent,
-    TrabajadoresComponent
+    TrabajadoresComponent,
+    TrabajadoresShowComponent,
+    FacturasComponent,
+    FacturasFormComponent
   ],
   imports: [
     BrowserModule,

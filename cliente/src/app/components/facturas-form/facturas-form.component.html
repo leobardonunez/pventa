@@ -1,0 +1,78 @@
+<main class="container">    
+    <button routerLink="/facturas" class="btn btn-primary btn-sm mt-4">Regresar</button> 
+                                    <div class="row">
+                                      <div class="col-md-4 mt-4">
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="card-title">Registrar nueva factura</div>
+                                            <!--numero factura-->
+                                            <div class="form-group">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Numero factura:</label>
+                                                    <input type="text" name="numerofactura" placeholder="Numero factura:" class="form-control" [(ngModel)]="factura.num_fact">
+                                                </div>
+                                            </div>
+                                            <!--numero factura-->                                                                                                                                                            
+                                            <!--Emisor-->
+                                            <div class="form-group">
+                                                <label class="form-label">Emisor:</label>
+                                                <input type="text" name="nombrereceptor" placeholder="Nombre Receptor" class="form-control" [(ngModel)]="factura.emisor">
+                                            </div>
+                                            <!--Emisor-->
+                                            <!--Receptor-->
+                                            <div class="form-group">
+                                                <label class="form-label">Receptor:</label>
+                                                <input typer="text" name="apellidoreceptor" placeholder="Apellido receptor" class="form-control" [(ngModel)]="factura.receptor">
+                                            </div>
+                                            <!--Receptor-->
+                                            <!--Producto-->
+                                            <div class="form-group">
+                                                <label class="form-label">Productos:</label>
+                                                <input type="text" name="numerofiscalreceptor" placeholder="Numero fiscal receptor" class="form-control" [(ngModel)]="factura.producto">
+                                            </div>
+                                            <!--Producto-->
+                                            <!--Cantidad-->
+                                            <div class="form-group">
+                                                <label class="form-label">Cantidad:</label>
+                                                <input type="text" name="Subtotal" placeholder="Subtotal" class="form-control" [(ngModel)]="factura.cantidad">
+                                            </div>
+                                            <!--Cantidad-->
+                                            <!--Subtotal-->
+                                            <div class="form-group">
+                                              <label class="form-label">Subtotal:</label>
+                                              <input type="text" name="iva" placeholder="Iva" class="form-control" [(ngModel)]="factura.subt">
+                                            </div>
+                                            <!--Subtotal-->
+                                            <!--Total-->
+                                            <div class="form-group">
+                                              <label class="form-label">Total:</label>
+                                              <input type="text" name="total" placeholder="Total" class="form-control" [(ngModel)]="factura.tot">
+                                            </div>
+                                            <!--Total-->
+                                            <!--Metodo de pago-->
+                                            <div class="form-group">
+                                              <label class="form-group">Metodo de pago:</label>
+                                              <input type="text" class="form-control" name="metodopago" [(ngModel)]="factura.metodo_pago">
+                                            </div>
+                                            <!--Metodo de pago-->
+                                            <div class="d-grid gap-2 col-6 mx-auto">
+                                              <button (click)="edit ? updateFactura() : saveNewFactura()" class="btn btn-success">Enviar</button>
+                                              <!--<button (click)="addOrEdit()" class="btn btn-success">Enviar</button>-->
+                                              <!--<button *ngIf="selectedCliente.id !== 0" (click)="Eliminar()" class="btn btn-danger">Eliminar</button>-->
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div> 
+                                     <div class="col md-4 mt-4">
+                                        <div class="card card-body text-center">
+                                          <!--<img [src]="producto.imagen" class="card-img-top">
+                                          <strong><h5>Codigo:</h5></strong><p>{{factura.codigo == 0 ? '----' : factura.codigo}}</p>
+                                          <strong><h5>Nombre:</h5></strong><p>{{factura.nombre == '' ? '----' : factura.nombre}}</p>
+                                          <strong><h5>Iva:</h5></strong><p>{{factura.iva == 0 ? '----' : factura.iva}}</p>
+                                          <strong><h5>Precio:</h5></strong><p>{{factura.precio == 0 ? '----' : factura.precio}}</p>
+                                          <strong><h5>Descripción:</h5></strong><p>{{factura.descripcion == '' ? '----' : factura.descripcion}}</p>-->
+                                        </div>
+                                      </div>
+      </div>
+    </main>
+    

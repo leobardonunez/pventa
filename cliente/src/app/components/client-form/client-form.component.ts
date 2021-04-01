@@ -16,9 +16,11 @@ export class ClientFormComponent implements OnInit {
   cliente: Cliente = {
     id: 0,
     nombre: '',
+    apellido: '',
     telefono: '',
     correo: '',
     direccion: '',
+    numero_fiscal: 0,
     created_at: new Date()
   };
 

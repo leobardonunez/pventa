@@ -4,15 +4,19 @@
                                     <div class="col-md-4 mt-4">
                                       <div class="card">
                                         <div class="card-body">
-                                          <div class="card-title">Registrar nuevo cliente</div>
-                                          <!--Nombre-->
-                                          <div class="form-group">
-                                            <div class="mb-3">
+                                          <div class="card-title">Registrar nuevo cliente</div>                                                                               
+                                         <!--Nombre y apellido-->
+                                          <div class="row g-3">
+                                            <div class="col">
                                               <label class="form-label">Nombre:</label>
-                                              <input type="text" name="nombre" placeholder="Nombre:" class="form-control " [(ngModel)]="cliente.nombre">
+                                              <input  type="text" class="form-control" placeholder="Nombre" [(ngModel)]="cliente.nombre"/>
+                                            </div>
+                                            <div class="col">
+                                              <label class="form-label">Apellidos:</label>
+                                              <input  class="form-control" type="text" name="Apellido"  placeholder="Apellidos" [(ngModel)]="cliente.apellido">
                                             </div>
                                           </div>
-                                          <!--Nombre-->
+                                         <!--Nombre y apellido-->
                                           <!--Telefono-->
                                           <div class="form-group">
                                             <label for="exampleDataList" class="form-label">Telefono:</label>
@@ -31,6 +35,12 @@
                                             <input type="text" name="direccion" placeholder="Dirección:" class="form-control " [(ngModel)]="cliente.direccion">                                            
                                           </div>
                                           <!--direccion-->
+                                          <!--Numero fiscal-->
+                                          <div class="form-group">
+                                            <label class="form-label">Numero identificador fiscal:</label>
+                                            <input type="text" name="numerofiscal" class="form-control" [(ngModel)]="cliente.numero_fiscal">
+                                          </div>
+                                          <!--Numero fiscal-->
                                           <div class="d-grid gap-2 col-6 mx-auto">
                                             <button (click)="edit ? updateCliente() : saveNewCliente()" class="btn btn-success">Enviar</button>
                                             <!--<button (click)="addOrEdit()" class="btn btn-success">Enviar</button>-->
@@ -52,6 +62,7 @@
                                                 <th>Telefono</th>
                                                 <th>Email</th>
                                                 <th>Dirección</th>
+                                                <th>Numero fiscal</th>
                                               </tr>
                                             </thead>
                                             <tbody>
@@ -59,6 +70,7 @@
                                                 <td>{{cliente.telefono == '' ? '----' : cliente.telefono}}</td>                                                                                 
                                                 <td>{{cliente.correo == '' ? '----' : cliente.correo}}</td>
                                                 <td>{{cliente.direccion == '' ? '----' : cliente.direccion}}</td>
+                                                <td>{{cliente.numero_fiscal == 0 ? '----' : cliente.numero_fiscal}}</td>
                                               </tr>
                                             </tbody>
                                           </table>                                          

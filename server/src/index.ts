@@ -12,6 +12,7 @@ import dashboardRoutes from './routes/dashboardRoutes';
 import ventasRoutes from './routes/ventasRoutes';
 import usuariosRoutes from './routes/usuariosRoutes';
 import rolesRoutes from './routes/rolesRoutes';
+import facturasRoutes from './routes/facturasRoutes';
 //Inicia el servidor
 class Server{
 
@@ -46,6 +47,7 @@ class Server{
         this.app.use('/ventas', ventasRoutes);
         this.app.use('/usuarios', usuariosRoutes);
         this.app.use('/roles', rolesRoutes);
+        this.app.use('/facturas' ,facturasRoutes);
     }
 
     //Inicializar el servidor para escuchar
