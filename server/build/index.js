@@ -16,6 +16,7 @@ const dashboardRoutes_1 = __importDefault(require("./routes/dashboardRoutes"));
 const ventasRoutes_1 = __importDefault(require("./routes/ventasRoutes"));
 const usuariosRoutes_1 = __importDefault(require("./routes/usuariosRoutes"));
 const rolesRoutes_1 = __importDefault(require("./routes/rolesRoutes"));
+const facturasRoutes_1 = __importDefault(require("./routes/facturasRoutes"));
 //Inicia el servidor
 class Server {
     constructor() {
@@ -46,6 +47,7 @@ class Server {
         this.app.use('/ventas', ventasRoutes_1.default);
         this.app.use('/usuarios', usuariosRoutes_1.default);
         this.app.use('/roles', rolesRoutes_1.default);
+        this.app.use('/facturas', facturasRoutes_1.default);
     }
     //Inicializar el servidor para escuchar
     start() {

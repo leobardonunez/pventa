@@ -22,6 +22,7 @@ export class UsuariosFormComponent implements OnInit {
     imagen: '',
     nombre: '',
     usuario: '',
+    correo: '',
     pass: '',
     estado: true,
     rol: 0,

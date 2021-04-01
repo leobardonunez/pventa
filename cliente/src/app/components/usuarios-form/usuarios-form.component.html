@@ -1,5 +1,5 @@
 <main class="container">
-  <button routerLink="/usuarios" class="btn btn-primary btn-sm mt-4">Regresar</button> 
+  <button routerLink="/usuarios" class="btn btn-primary btn-sm mt-4 ">Regresar</button> 
     <div class="row">
         <!--form-->
         <div class="col-md-4 mt-4">
@@ -21,18 +21,26 @@
                 <input  class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Nombre" [(ngModel)]="usuarios.nombre">
               </div>
               <!--nombre-->
-              <!--usuario-->
-              <div class="form-group">
-                <label class="form-label">Usuario:</label>
-                <input  type="text" class="form-control" placeholder="Usuario" [(ngModel)]="usuarios.usuario"/>
+              <!--usuario y contraseña-->
+              <div class="row g-3">
+                <div class="col">
+                  <label class="form-label">Usuario:</label>
+                  <input  type="text" class="form-control" placeholder="Usuario" [(ngModel)]="usuarios.usuario"/>
+                </div>
+                <div class="col">
+                  <label class="form-label">Contraseña:</label>
+                  <input  class="form-control" type="password" name="flexRadioDefault" id="flexRadioDefault1" placeholder="....." [(ngModel)]="usuarios.pass">
+                </div>
               </div>
-              <!--usuario-->
-              <!--password-->
+              <!--uusario y contraseña-->
+              <!--Correo-->
               <div class="form-group">
-                <label class="form-label">Contraseña:</label>
-                <input  class="form-control" type="password" name="flexRadioDefault" id="flexRadioDefault1" placeholder="....." [(ngModel)]="usuarios.pass">
+                <label class="form-label">Correo:</label>
+                <input type="text" class="form-control" placeholder="Correo" [(ngModel)]="usuarios.correo">
               </div>
-              <!--password-->
+              <!--Correo-->
+         
+        
               <!--confirmacion-->
               <!--<div class="form-group">
                 <label class="form-label">Confirmación de contraseña:</label>
