@@ -4,6 +4,7 @@ import { Facturas } from 'src/app/models/facturas';
 import{ ActivatedRoute, Router} from '@angular/router';
 
 import { FacturasService } from '../../services/facturas.service';
+import { ProductosService } from '../../services/productos.service';
 
 @Component({
   selector: 'app-facturas-form',
@@ -27,10 +28,13 @@ export class FacturasFormComponent implements OnInit {
     metodo_pago: '',
     created_at: new Date()     
   };
+
+  //Guarda productos
+  productos: any=[];
   //Si esta en falso significa que quiere guardar un nuevo producto y si esta en verdadero significa que quiere actualizar una factura
   edit: boolean = false;
 
-  constructor(private facturasService: FacturasService , private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private facturasService: FacturasService ,private productosService: ProductosService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     const params=this.activatedRoute.snapshot.params;
@@ -46,6 +50,16 @@ export class FacturasFormComponent implements OnInit {
       )
     }
     console.log(params);
+  }
+
+  //Obtiene emisor de factura
+  getproducto(){
+    this.productosService.getProductos().subscribe(
+      res=>{
+        this.productos=res;
+      },
+      err=> console.error(err)
+    );
   }
 
   //Guardar

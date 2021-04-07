@@ -15,13 +15,13 @@ export class ProductFormComponent implements OnInit {
 
    producto: Producto = {
     id: 0,
-    imagen: '',
-    codigo: 0,    
-    nombre: '',
-    iva: 0,
-    estado: true,
-    precio: 0,
-    descripcion: '',
+    imagen_prod: '',
+    codigo_prod: 0,    
+    nombre_prod: '',
+    iva_prod: 0,
+    estado_prod: true,
+    precio_prod: 0,
+    descripcion_prod: '',
     created_at: new Date()     
   };
   //Si esta en falso significa que quiere guardar un nuevo producto y si esta en verdadero significa que quiere actualizar un producto

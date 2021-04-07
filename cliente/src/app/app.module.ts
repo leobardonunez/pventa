@@ -34,6 +34,7 @@ import { TrabajadoresComponent } from './components/trabajadores/trabajadores.co
 import { TrabajadoresShowComponent } from './components/trabajadores-show/trabajadores-show.component';
 import { FacturasComponent } from './components/facturas/facturas.component';
 import { FacturasFormComponent } from './components/facturas-form/facturas-form.component';
+import { TrasladoComponent } from './components/traslado/traslado.component';
 
 const rutas: Routes=[
     //Esta es la ruta principal
@@ -166,6 +167,11 @@ const rutas: Routes=[
     {
       path: 'facturas/edit/:id',
       component: FacturasFormComponent
+    }, 
+    //Traslado
+    {
+      path: 'traslado',
+      component: TrasladoComponent
     }
 
 ]
@@ -192,7 +198,8 @@ const rutas: Routes=[
     TrabajadoresComponent,
     TrabajadoresShowComponent,
     FacturasComponent,
-    FacturasFormComponent
+    FacturasFormComponent,
+    TrasladoComponent
   ],
   imports: [
     BrowserModule,

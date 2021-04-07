@@ -11,8 +11,7 @@ import { FacturasService } from '../../services/facturas.service';
 export class FacturasComponent implements OnInit {
 
   facturas: any=[];
-
-
+   
   constructor(private facturasService: FacturasService) { }
 
   ngOnInit(): void {
@@ -28,6 +27,7 @@ export class FacturasComponent implements OnInit {
         err=> console.error(err)      
       );
     }
+
 
   //Eliminar Facturas
   deleteFactura(id: string){

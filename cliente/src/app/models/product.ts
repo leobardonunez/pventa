@@ -1,12 +1,12 @@
 export interface Producto {
     id?: number;
-    imagen?: string;
-    codigo?: number;    
-    nombre?: string;
-    iva?: number;
-    estado?: boolean;
-    precio?: number;
-    descripcion?: string;
+    imagen_prod?: string;
+    codigo_prod?: number;    
+    nombre_prod?: string;
+    iva_prod?: number;
+    estado_prod?: boolean;
+    precio_prod?: number;
+    descripcion_prod?: string;
     created_at?: Date;
 
 }

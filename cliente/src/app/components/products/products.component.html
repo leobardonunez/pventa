@@ -22,11 +22,11 @@
                                               <tbody>
                                                 <!--<tr *ngFor="let cliente of clientes" (click)="openForEdit(clientes)" [class.active]="clientes== selectedCliente">-->
                                                   <tr *ngFor="let producto of productos" >                                                  
-                                                  <td>{{producto.codigo}}</td>
-                                                  <td>{{producto.nombre}}</td>
-                                                  <td>{{producto.iva}}</td>
-                                                  <td>{{producto.precio}}</td>
-                                                  <td>{{producto.descripcion}}</td>
+                                                  <td>{{producto.codigo_prod}}</td>
+                                                  <td>{{producto.nombre_prod}}</td>
+                                                  <td>{{producto.iva_prod}}</td>
+                                                  <td>{{producto.precio_prod}}</td>
+                                                  <td>{{producto.descripcion_prod}}</td>
                                                   <td>                                                                                                         
                                                     <div class="d-grid gap-2 d-md-block">
                                                       <button [routerLink]="['/products/edit', producto.id]" class="btn btn-primary" type="button">

@@ -15,13 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.facturasController = void 0;
 const database_1 = __importDefault(require("../database"));
 class FacturasController {
-    //Listar
+    //Listar facturas
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const facturas = yield database_1.default.query('SELECT * FROM facturas');
+            const facturas = yield database_1.default.query('SELECT * FROM facturas f , factura_emisor fe,clientes c,productos p  WHERE f.emisor= fe.id and f.receptor=c.id and f.producto= p.id');
             res.json(facturas);
         });
     }
+    //SELECT f.num_fact, f.emisor,f.receptor,f.producto,f.cantidad,f.subt,f.tot,f.metodo_pago,f.created_at FROM facturas f INNER JOIN factura_emisor fe WHERE f.emisor=fe.id
     //Obtener
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {

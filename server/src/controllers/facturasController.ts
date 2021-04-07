@@ -3,11 +3,13 @@ import pool from '../database';
 
 
 class FacturasController{
-        //Listar
+        //Listar facturas
         public async list(req: Request, res: Response){
-            const facturas= await pool.query('SELECT * FROM facturas');
+            const facturas= await pool.query('SELECT * FROM facturas f , factura_emisor fe,clientes c,productos p  WHERE f.emisor= fe.id and f.receptor=c.id and f.producto= p.id');
             res.json(facturas);
-        }   
+
+        }
+        //SELECT f.num_fact, f.emisor,f.receptor,f.producto,f.cantidad,f.subt,f.tot,f.metodo_pago,f.created_at FROM facturas f INNER JOIN factura_emisor fe WHERE f.emisor=fe.id
         //Obtener
         public async getOne(req: Request, res: Response): Promise<any>{
             const {id}= req.params;

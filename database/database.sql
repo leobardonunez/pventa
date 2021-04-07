@@ -15,13 +15,13 @@ CREATE TABLE clientes(
 );
 CREATE TABLE productos(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    imagen VARCHAR(500),
-    codigo  INT NOT NULL,  
-    nombre VARCHAR(200) NOT NULL,
-    iva FLOAT,
-    estado BOOLEAN NOT NULL,
-    precio FLOAT NOT NULL,
-    descripcion VARCHAR(400),
+    imagen_prod VARCHAR(500),
+    codigo_prod  INT NOT NULL,  
+    nombre_prod VARCHAR(200) NOT NULL,
+    iva_prod FLOAT,
+    estado_prod BOOLEAN NOT NULL,
+    precio_prod FLOAT NOT NULL,
+    descripcion_prod VARCHAR(400),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
  
@@ -76,11 +76,11 @@ CREATE TABLE usuarios(
 
 CREATE TABLE factura_emisor(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(150),
-    apellido VARCHAR(150),
-    domicilio VARCHAR(200),
-    denom_soc VARCHAR(300),
-    numero_fiscal INT,
+    nombre_emi VARCHAR(150),
+    apellido_emi VARCHAR(150),
+    domicilio_emi VARCHAR(200),
+    denom_soc_emi VARCHAR(300),
+    numero_fiscal_emi INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -122,6 +122,48 @@ INSERT INTO metodo_pago(metodo)VALUES('Credito');
 INSERT INTO metodo_pago(metodo)VALUES('Contado');
 
 /*EMISOR*/
-INSERT INTO factura_emisor(nombre,apellido,domicilio,denom_soc,numero_fiscal)VALUES('Javier','Andrade Duarte','Las memorias','S.A de C.V',6781);
+INSERT INTO factura_emisor(nombre_emi,apellido_emi,domicilio_emi,denom_soc_emi,numero_fiscal_emi)VALUES('Javier','Andrade Duarte','Las memorias','S.A de C.V',6781);
 /*Usuario root*/
 INSERT INTO usuarios(nombre,usuario,correo,pass,estado,rol)VALUES('root','root','root@root','9901',1,1);
+
+
+/*Prueba de insert en facturas*/
+INSERT INTO facturas(num_fact,emisor,receptor,producto,cantidad,subt,tot,metodo_pago)VALUES(9192,1,1,1,2,120,240,1);
+INSERT INTO facturas(num_fact,emisor,receptor,producto,cantidad,subt,tot,metodo_pago)VALUES(9192,1,1,1,2,120,240,2);
+INSERT INTO facturas(num_fact,emisor,receptor,producto,cantidad,subt,tot,metodo_pago)VALUES(9192,1,2,1,2,120,240,2);
+INSERT INTO facturas(num_fact,emisor,receptor,producto,cantidad,subt,tot,metodo_pago)VALUES(9192,1,2,1,2,120,240,1);
+INSERT INTO facturas(num_fact,emisor,receptor,producto,cantidad,subt,tot,metodo_pago)VALUES(9192,1,1,1,2,120,240,1);
+INSERT INTO facturas(num_fact,emisor,receptor,producto,cantidad,subt,tot,metodo_pago)VALUES(9192,1,1,1,2,120,240,1);
+INSERT INTO facturas(num_fact,emisor,receptor,producto,cantidad,subt,tot,metodo_pago)VALUES(9192,1,2,1,2,120,240,2);
+INSERT INTO facturas(num_fact,emisor,receptor,producto,cantidad,subt,tot,metodo_pago)VALUES(9192,1,2,1,2,120,240,1);
+INSERT INTO facturas(num_fact,emisor,receptor,producto,cantidad,subt,tot,metodo_pago)VALUES(9192,1,1,1,2,120,240,1);
+INSERT INTO facturas(num_fact,emisor,receptor,producto,cantidad,subt,tot,metodo_pago)VALUES(9192,1,1,1,2,120,240,1);
+INSERT INTO facturas(num_fact,emisor,receptor,producto,cantidad,subt,tot,metodo_pago)VALUES(9192,1,2,1,2,120,240,2);
+INSERT INTO facturas(num_fact,emisor,receptor,producto,cantidad,subt,tot,metodo_pago)VALUES(9192,1,2,1,2,120,240,1);
+INSERT INTO facturas(num_fact,emisor,receptor,producto,cantidad,subt,tot,metodo_pago)VALUES(9192,1,1,1,2,120,240,1);
+INSERT INTO facturas(num_fact,emisor,receptor,producto,cantidad,subt,tot,metodo_pago)VALUES(9192,1,1,1,2,120,240,1);
+
+
+/*Inserta en productos*/
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(1,'apple',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(2,'Samsung',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(3,'Huawei',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(4,'Sony',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(5,'Benq',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(6,'Toshiba',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(7,'asda',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(8,'a',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(9,'b',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(10,'c',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(11,'d',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(12,'f',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(13,'g',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(14,'h',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(15,'i',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(16,'j',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(17,'k',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(18,'l',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(19,'m',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(20,'n',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(21,'ñ',0.16,1,200,'tecnoogia');
+INSERT INTO productos(codigo_prod,nombre_prod,iva_prod,estado_prod,precio_prod,descripcion_prod)VALUES(22,'o',0.16,1,200,'tecnoogia');

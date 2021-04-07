@@ -6,6 +6,7 @@ import{ ActivatedRoute, Router} from '@angular/router';
 
 import { VentasService } from '../../services/ventas.service';
 import { ProductosService } from 'src/app/services/productos.service';
+import { ClientesService } from 'src/app/services/clientes.service';
 
 
 @Component({
@@ -34,11 +35,14 @@ export class VentasFormComponent implements OnInit {
   //Guarda productos
   productos: any=[];
 
+  //Guarda clientes
+  clientes: any=[];
+
   //Si esta en falso significa que quiere guardar una nueva venta y si esta en verdadero significa que quiere actualizar una venta
   edit: boolean = false;
 
 
-  constructor(private ventasService: VentasService, private router: Router, private activatedRoute: ActivatedRoute, private productsService: ProductosService) { }
+  constructor(private ventasService: VentasService,private clientesService: ClientesService ,private router: Router, private activatedRoute: ActivatedRoute, private productsService: ProductosService) { }
 
   ngOnInit(): void {
 
@@ -57,6 +61,7 @@ export class VentasFormComponent implements OnInit {
     console.log(params);
 
     this.getproducts();
+    this.getclientes();
   }
 
   //Obtiene Productos
@@ -64,6 +69,17 @@ export class VentasFormComponent implements OnInit {
     this.productsService.getProductos().subscribe(
       res=> {
         this.productos= res;
+        console.log(res);
+      },
+      err=> console.error(err)
+    );
+  }
+
+  //Obtiene clientes
+  getclientes(){
+    this.clientesService.getClientes().subscribe(
+      res=>{
+        this.clientes=res;
         console.log(res);
       },
       err=> console.error(err)

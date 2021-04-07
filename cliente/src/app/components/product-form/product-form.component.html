@@ -9,7 +9,7 @@
                                             <div class="form-group">
                                                 <div class="mb-3">
                                                     <label class="form-label">Codigo:</label>
-                                                    <input type="text" name="codigo" placeholder="Codigo:" class="form-control" [(ngModel)]="producto.codigo">
+                                                    <input type="text" name="codigo" placeholder="Codigo:" class="form-control" [(ngModel)]="producto.codigo_prod">
                                                 </div>
                                             </div>
                                             <!--codigo-->
@@ -17,32 +17,32 @@
                                             <div class="form-group">
                                               <div class="mb-3">
                                                 <label class="form-label">Nombre:</label>
-                                                <input type="text" name="nombre" placeholder="Nombre:" class="form-control " [(ngModel)]="producto.nombre">
+                                                <input type="text" name="nombre" placeholder="Nombre:" class="form-control " [(ngModel)]="producto.nombre_prod">
                                               </div>
                                             </div>
                                             <!--Nombre-->                                           
                                             <!--iva-->
                                             <div class="form-group">
                                               <label class="form-label">Iva:</label>
-                                              <input type="text" name="iva" placeholder="Iva:" class="form-control" [(ngModel)]="producto.iva">                                            
+                                              <input type="text" name="iva" placeholder="Iva:" class="form-control" [(ngModel)]="producto.iva_prod">                                            
                                             </div>
                                             <!--iva-->                                            
                                             <!--precio-->
                                             <div class="form-group">
                                                 <label class="form-label">Precio:</label>
-                                                <input type="text" name="precio" placeholder="Precio:" class="form-control" [(ngModel)]="producto.precio">
+                                                <input type="text" name="precio" placeholder="Precio:" class="form-control" [(ngModel)]="producto.precio_prod">
                                             </div>
                                             <!--precio-->
                                             <!--descripcion-->
                                             <div class="form-group">
                                                 <label class="form-label">Descripcion:</label>
-                                                <input type="text" name="descripcion" placeholder="Descripcion:" class="form-control" [(ngModel)]="producto.descripcion">
+                                                <input type="text" name="descripcion" placeholder="Descripcion:" class="form-control" [(ngModel)]="producto.descripcion_prod">
                                             </div>
                                             <!--descripcion-->
                                             <!--Imagen-->                                                                                     
                                             <div class="form-group">
                                               <label class="form-label">Imagen:</label>
-                                              <input type="url" name="image" placeholder="Image" class="form-control" [(ngModel)]=producto.imagen>
+                                              <input type="url" name="image" placeholder="Image" class="form-control" [(ngModel)]="producto.imagen_prod">
                                             </div>
                                             <!--Imagen-->
                                             <div class="d-grid gap-2 col-6 mx-auto">
@@ -55,12 +55,12 @@
                                       </div> 
                                      <div class="col md-4 mt-4">
                                         <div class="card card-body text-center">
-                                          <img [src]="producto.imagen" class="card-img-top">
-                                          <strong><h5>Codigo:</h5></strong><p>{{producto.codigo == 0 ? '----' : producto.codigo}}</p>
-                                          <strong><h5>Nombre:</h5></strong><p>{{producto.nombre == '' ? '----' : producto.nombre}}</p>
-                                          <strong><h5>Iva:</h5></strong><p>{{producto.iva == 0 ? '----' : producto.iva}}</p>
-                                          <strong><h5>Precio:</h5></strong><p>{{producto.precio == 0 ? '----' : producto.precio}}</p>
-                                          <strong><h5>Descripción:</h5></strong><p>{{producto.descripcion == '' ? '----' : producto.descripcion}}</p>
+                                          <img [src]="producto.imagen_prod" class="card-img-top">
+                                          <strong><h5>Codigo:</h5></strong><p>{{producto.codigo_prod == 0 ? '----' : producto.codigo_prod}}</p>
+                                          <strong><h5>Nombre:</h5></strong><p>{{producto.nombre_prod == '' ? '----' : producto.nombre_prod}}</p>
+                                          <strong><h5>Iva:</h5></strong><p>{{producto.iva_prod == 0 ? '----' : producto.iva_prod}}</p>
+                                          <strong><h5>Precio:</h5></strong><p>{{producto.precio_prod == 0 ? '----' : producto.precio_prod}}</p>
+                                          <strong><h5>Descripción:</h5></strong><p>{{producto.descripcion_prod == '' ? '----' : producto.descripcion_prod}}</p>
                                         </div>
                                       </div>
       </div>

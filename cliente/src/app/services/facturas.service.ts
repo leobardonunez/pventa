@@ -19,6 +19,7 @@ API_URI= 'http://localhost:3000';
   getFacturas(){
     return this.http.get(`${this.API_URI}/facturas`);
   }
+
   //Obtener un facturas
   getFactura(id: string){
     return this.http.get(`${this.API_URI}/facturas/${id}`);

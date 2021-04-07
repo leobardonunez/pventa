@@ -6,26 +6,30 @@
                                           <div class="card-body">
                                             <div class="card-title">Registrar nueva venta</div>
                                             <!--Producto-->
-                                            <div class="form-group">
+                                            <!--<div class="form-group">
                                               <div class="mb-3">
                                                 <label class="form-label">Producto:</label>                                                                        
                                                 <select [(ngModel)]="ventas.producto_venta"  class="form-select" placeholder="Producto:">
-                                                  <option *ngFor="let dp of productos" [value]="dp.id">{{dp.nombre}}</option>
+                                                  <option *ngFor="let dp of productos" [value]="dp.id">{{dp.nombre_prod}}</option>
                                                 </select>                                 
                                               </div>
-                                            </div>                                                                                  
+                                            </div>                                                                                  -->
                                             <!--Producto-->
                                             <!--cantidad-->
-                                            <div class="form-group">
+                                            <!--<div class="form-group">
                                               <label for="exampleDataList" class="form-label">Cantidad:</label>
                                              <input type="text" name="cantidad" placeholder="cantidad:" class="form-control " [(ngModel)]="ventas.cantidad">                                            
-                                            </div>
+                                            </div>-->
                                             <!--cantidad-->
-                                            <!--Cliente-->
+                                            <!--Cliente-->                                            
                                             <div class="form-group">
-                                              <label class="form-label">Cliente:</label>
-                                              <input type="text" name="cliente" placeholder="Cliente" class="form-control" [(ngModel)]="ventas.cliente">
-                                            </div>                                            
+                                              <div class="mb-3">
+                                                <label class="form-label">Cliente:</label>                                                                        
+                                                <select [(ngModel)]="ventas.cliente"  class="form-select" placeholder="Cliente:">
+                                                  <option *ngFor="let dp of clientes" [value]="dp.id">{{dp.nombre}}</option>
+                                                </select>                                 
+                                              </div>
+                                            </div>                                                                                 
                                             <!--Cliente-->
                                             <!--Subtotal-->
                                             <div class="form-group">
@@ -58,7 +62,62 @@
                                             </div>
                                           </div>
                                         </div>
-                                      </div> 
+                                      </div>
+                                      
+                                      <div class="col-md-5 mt-4">
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="card-title">Selecciona los productos</div>
+                                            <!--form-->                                      
+                                            <div class="row g-3">
+                                              <div class="col">
+                                                <label for="exampleDataList" class="form-label">Producto:</label>
+                                                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                                                <datalist id="datalistOptions" [(ngModel)]="ventas.producto_venta">
+                                                  <option *ngFor="let dp of productos" [value]="dp.id"></option>   
+                                                </datalist>
+                                                <label class="form-label">Cantidad</label>
+                                                <input type="text" name="cantidad" placeholder="cantidad:" class="form-control " [(ngModel)]="ventas.cantidad">                                            
+                                              </div>
+                                              <button class="btn btn-primary">+</button>
+                                            </div>                                  
+                                            <!--form-->
+                                          </div>
+                                        </div>
+                                      </div>
 
+      </div>
+      <div class="row">
+        <div class="col-md-12 mt-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title">Lista de productos</div>
+              <!--Lista-->
+              <div class="container mt-4">
+                <div class="table-responsive">
+                  <!-- PROJECT TABLE -->
+                  <table class="table colored-header datatable project-list">
+                    <thead>
+                      <tr>
+                        <th>Nombre</th>
+                        <th>Cantidad</th>                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><a href="#">Sandalia gucci</a></td>                        
+                        <td>
+                          <span class="badge " style="background-color: blueviolet;">333131312312312312</span>                          
+                        </td>                        
+                      </tr>               
+                    </tbody>
+                  </table>
+                  <!-- END PROJECT TABLE -->
+                </div>
+            </div>
+              <!--Lista-->
+            </div>
+          </div>
+        </div>
       </div>
     </main>
